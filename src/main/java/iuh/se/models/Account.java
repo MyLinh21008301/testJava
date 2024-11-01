@@ -1,7 +1,10 @@
 package iuh.se.models;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
 	private String accountID;
+	private String fullName;
 	private String password;
 	private String email;
 	private String phone;
@@ -9,9 +12,10 @@ public class Account {
 	public Account() {
 		
 	}
-	public Account(String accountID, String password, String email, String phone, int status) {
-		
+	public Account(String accountID, String fullName, String password, String email, String phone, int status) {
+		super();
 		this.accountID = accountID;
+		this.fullName = fullName;
 		this.password = password;
 		this.email = email;
 		this.phone = phone;
@@ -22,6 +26,12 @@ public class Account {
 	}
 	public void setAccountID(String accountID) {
 		this.accountID = accountID;
+	}
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	public String getPassword() {
 		return password;
@@ -49,8 +59,8 @@ public class Account {
 	}
 	@Override
 	public String toString() {
-		return "Account [accountID=" + accountID + ", password=" + password + ", email=" + email + ", phone=" + phone
-				+ ", status=" + status + "]";
+		return "Account [accountID=" + accountID + ", fullName=" + fullName + ", password=" + password + ", email="
+				+ email + ", phone=" + phone + ", status=" + status + "]";
 	}
 	
 }
